@@ -1,10 +1,13 @@
 source 'https://rubygems.org'
 
+ gem 'activeadmin', github: 'activeadmin'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
+
 # Use sqlite3 as the database for Active Record
-# gem 'sqlite3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -46,25 +49,28 @@ end
 
 group :development do
   gem 'sqlite3'
-  gem 'rspec-rails', '2.6.1', :require => 'rspec-rails'
+  gem 'rspec-rails', :require => 'rspec-rails'
 # gem 'annotate', '2.4.0'
   gem 'faker', '0.3.1'
 # gem 'test-unit'
+  
 end
 
 
 group :test do
   gem 'sqlite3'
-  gem 'rspec-rails', '2.6.1', :require => 'rspec-rails'
+  gem 'rspec-rails', :require => 'rspec-rails'
 # gem 'test-unit'
   gem 'webrat', '0.7.1'
   gem 'factory_girl_rails', '1.0'
 # pretty printed test output
   gem 'turn', :require => false
+  
 end  
 
 
 group :production do
   gem 'pg'  # Postgre
+
 end
 
