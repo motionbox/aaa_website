@@ -1,26 +1,13 @@
 Rails.application.routes.draw do
 
-  match "/index" => "aaa_core#index", via: :get
-  match "/shop" => "aaa_core#shop", via: :get
-  match "/events" => "aaa_core#events", via: :get
-  match "/discussion" => "aaa_core#discussion", via: :get
-
-
-
-  get 'aaa_core/index'
-
-  get 'aaa_core/events'
-
-  get 'aaa_core/shop'
-
-  get 'aaa_core/discussion'
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'aaa_core#index'	
+  	
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -70,4 +57,23 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+end
+
+AAAWebsite::Application.routes.draw do
+
+  devise_for :members
+  resources :events  # scaffold
+
+  match "/index" => "aaa_core#index", via: :get
+  match "/shop" => "aaa_core#shop", via: :get
+  match "/discussion" => "aaa_core#discussion", via: :get
+
+
+  get 'aaa_core/index'
+  get 'aaa_core/shop'
+  get 'aaa_core/discussion'
+
+
+  root 'aaa_core#index'
+
 end
